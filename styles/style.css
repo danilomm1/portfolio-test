@@ -1,0 +1,177 @@
+/* Importando a fonte que foi definida no figma */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap'); /* copiado do google font */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&display=swap'); /* copiado do google font */
+
+ /* Trabalhando com variáveis no CSS, propriedades sensíveis */
+ /* variavel local não é no root*/
+ /* element {
+    --azulclaro: #22D4FD;
+    --branco: #f6f6f6;
+    --preto: #000000;
+
+  }*/
+  
+ /*variavel global*/
+ :root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover:#272727;
+
+    /* pegando cores do https://colorhunt.co
+    --cor-primaria: #7D6E83;
+    --cor-secundaria: #D0B8A8;
+    --cor-terciaria: #DFD3C3;
+    --cor-hover:#F8EDE3;
+    */
+
+    --fonte-primaria: 'Krona One', sans-serif; 
+    --fonte-secundaria: 'Montserrat', sans-serif;
+
+
+  }
+
+* {
+    margin:0;  /* Resetando o padrão de margem do html */
+    padding: 0; /* Resetando o padrão de espaçamento interno do html */
+}
+
+
+
+body {
+    /*height:100vh; /* Resetando o padrão de altura do body 100% do vh viewport height */
+    box-sizing: border-box;/* para garantir que nenhum item do filho saia do pai */
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho{
+    
+    padding: 2% 0% 0% 15%;/* com 4 valores alteramos somente um ou dois dos lados */
+}
+
+.cabecalho__menu{
+    display: flex;
+    gap: 80px
+}
+
+.cabecalho__menu__link{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:  var(--cor-terciaria);
+    text-decoration: none; /*remove a formatação de texto sublinhado do link */
+}
+
+.titulo-destaque{     /* Método de classe */
+    color:  var(--cor-terciaria); /* Comentário */
+}
+
+.apresentacao {
+    /*margin: 8% 15%;/*todos os elementos do main vão ter uma margem,o primeiro valor é vertical e o segundo é horizontal não vale a pena colocar uma margem fixa*/
+    padding: 5% 15%;
+    display:flex; /* O main tem essa classe e tudo o que estiver embaixo dele vai ficar encaixado no flexbox por padrão fica em direção de linha horizontal */
+    align-items: center;/* para alinhar todos os itens no centro */
+    justify-content:space-between;/* para afastar os items entre si */
+    gap:64px
+}
+
+.apresentacao__conteudo {
+    width: 50%;/* definir um tamanho para os elementos dessa sessão conforme o figma */
+    display:flex;
+    flex-direction: column; /* o padrão é em linha e agora vamos mudar pra vertical */
+    gap: 40px; /* é o espaçamento entre os itens*/
+}
+
+.apresentacao__conteudo__titulo{
+    font-size: 2.25rem;/* tamanho da fonte conforme o figma */
+    font-family: var(--fonte-primaria)/* copiado do google font */
+
+}
+
+.apresentacao__conteudo__texto{
+    font-size: 1.5rem;/* tamanho da fonte conforme o figma */
+    font-family: var(--fonte-secundaria);
+
+}
+
+.apresentacao__links{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap:32px;
+
+}
+
+.apresentacao__links__subtitulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__link{
+    /* background-color:  var(--cor-terciaria); */
+    display:flex;
+    justify-content: center;
+    gap:16px;
+    border: 2px solid  var(--cor-terciaria); /*o primeiro valor é a espessura, a segunda é style */
+    width: 70%;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0 0 0;
+    /*padding-top: 21.5px 0;*/
+    /*padding-bottom: 21.5px  0;*/
+    font-family: var(--fonte-secundaria);
+    text-decoration: none; /*remove a formatação de texto sublinhado do link */
+    color:  var(--cor-secundaria);
+
+
+}
+
+.apresentacao__links__link:hover{
+    background-color: var(--cor-hover);
+}
+
+.apresentacao_foto{
+    
+    width: 50%;
+    border-radius: 64px;
+    border-width: 24px;
+    border-color:  var(--cor-terciaria);
+    border-style: double;
+
+}
+
+.rodape{
+    color:  var(--cor-primaria);
+    /* da borda para o centro */
+    padding: 24px; 
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+    background-color:  var(--cor-terciaria);
+}
+
+@media(max-width: 1000px){
+    .apresentacao {
+        /*margin: 8% 15%;/*todos os elementos do main vão ter uma margem,o primeiro valor é vertical e o segundo é horizontal não vale a pena colocar uma margem fixa*/
+        padding: 10% 15%;
+        display:flex; /* O main tem essa classe e tudo o que estiver embaixo dele vai ficar encaixado no flexbox por padrão fica em direção de linha horizontal */
+        align-items: center;/* para alinhar todos os itens no centro */
+        flex-direction: column-reverse;
+        justify-content:space-between;/* para afastar os items entre si */
+    }
+    .apresentacao__conteudo {
+        width: auto;/* definir um tamanho para os elementos dessa sessão conforme o figma */
+        display:flex;
+        flex-direction: column; /* o padrão é em linha e agora vamos mudar pra vertical */
+        gap: 40px; /* é o espaçamento entre os itens*/
+    }
+    .cabecalho__menu {
+        justify-content: center;
+    }
+}
